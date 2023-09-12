@@ -7,7 +7,11 @@ import Product from "./product";
 })
 export class ProductCarousel {
   
-  @State() cart: number[] = []
+  @State() cart: number[]
+
+  constructor(){
+    this.cart = []
+  }
 
   updateCart(i: number) {
     let x = true;
@@ -24,9 +28,9 @@ export class ProductCarousel {
     console.log(this.cart)
   }
   
-  dlcart(){
+  dlcart(c: any){
     console.log("Download clicked!")
-    console.log(this.cart)
+    console.log(c)
     return;
   }
 
@@ -37,13 +41,13 @@ export class ProductCarousel {
     
   }
   
-
   render() {
+
     return (
       <Host>
         <header>
           <h1 class="page-title">Product Carousel Page</h1>
-          <button class="download" onClick={this.dlcart}>Download cart</button>
+          <button class="download" onClick={() => this.dlcart(this.cart)}>Download cart</button>
         </header>
         <div class="carousel">
           {Product.map((product) => (
