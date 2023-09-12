@@ -10,14 +10,20 @@ export namespace Components {
     }
     interface ProductItem {
         "desc": string;
+        "i": number;
         "name": string;
         "price": number;
         "src": string;
     }
     interface ProductText {
         "desc": string;
+        "i": number;
         "price": number;
     }
+}
+export interface ProductTextCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLProductTextElement;
 }
 declare global {
     interface HTMLProductCarouselElement extends Components.ProductCarousel, HTMLStencilElement {
@@ -49,12 +55,15 @@ declare namespace LocalJSX {
     }
     interface ProductItem {
         "desc"?: string;
+        "i"?: number;
         "name"?: string;
         "price"?: number;
         "src"?: string;
     }
     interface ProductText {
         "desc"?: string;
+        "i"?: number;
+        "onCartChange"?: (event: ProductTextCustomEvent<any[]>) => void;
         "price"?: number;
     }
     interface IntrinsicElements {

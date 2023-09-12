@@ -1,4 +1,4 @@
-import { Component, h, Host } from "@stencil/core";
+import { Component, h, Host, Listen } from "@stencil/core";
 import Product from "./product";
 
 function dlcart(){
@@ -12,6 +12,14 @@ function dlcart(){
     shadow: true,
 })
 export class ProductCarousel {
+
+  @Listen('cartChange')
+  onCartChange(e) {
+    if(e.detail.added){
+
+    }
+  }
+
   render() {
     return (
       <Host>
@@ -22,6 +30,7 @@ export class ProductCarousel {
         <div class="carousel">
           {Product.map((product) => (
             <product-item
+              i={product.i}
               src={product.src}
               name={product.name}
               desc={product.desc}

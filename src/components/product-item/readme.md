@@ -17,6 +17,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [product-carousel](../product-carousel)
+
 ### Depends on
 
 - [product-text](../product-text)
@@ -25,6 +29,7 @@
 ```mermaid
 graph TD;
   product-item --> product-text
+  product-carousel --> product-item
   style product-item fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
