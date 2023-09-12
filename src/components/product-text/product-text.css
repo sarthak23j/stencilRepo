@@ -1,0 +1,26 @@
+.product-text{
+
+  height:30rem;
+  width:20rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.product-text > * {
+  margin: 0%;
+}
+
+.product-desc{
+  font-size: 0.85rem;
+}
+
+.buy-btn{
+  box-sizing: border-box;
+
+  background-color: transparent;
+  font-family: Poppins;
+
+  margin-left: 1rem;
+}

@@ -1,0 +1,25 @@
+.product-item{
+
+  height:30rem;
+  width:42rem;
+
+  padding:1rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 3px solid black;
+  border-radius: 1rem;
+}
+
+.item-name{
+  padding-inline-start: 2rem;
+}
+
+.product-image{
+  height: 26rem;
+  width: 20rem;
+  align-self: center;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
