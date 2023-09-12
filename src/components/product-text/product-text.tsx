@@ -16,7 +16,7 @@ export class FirstComponent {
         <p class="product-desc">{this.desc} </p>
         <p class="product-price">
           Price : ${this.price}
-          <button class="buy-btn">Buy now</button>
+          <button class="buy-btn">Add to cart</button>
         </p>
       </div>
     );

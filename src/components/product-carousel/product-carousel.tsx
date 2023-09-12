@@ -1,5 +1,11 @@
 import { Component, h, Host } from "@stencil/core";
 import Product from "./product";
+
+function dlcart(){
+
+  console.log("Download clicked!")
+  return;
+}
 @Component({
   tag: "product-carousel",
     styleUrl: 'product-carousel.css',
@@ -9,8 +15,10 @@ export class ProductCarousel {
   render() {
     return (
       <Host>
-        <h1 class="page-title">Product Carousel Page</h1>
-
+        <header>
+          <h1 class="page-title">Product Carousel Page</h1>
+          <button class="download" onClick={dlcart}>Download cart</button>
+        </header>
         <div class="carousel">
           {Product.map((product) => (
             <product-item

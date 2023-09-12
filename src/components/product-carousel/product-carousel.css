@@ -1,7 +1,23 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .page-title{
   margin: 1rem;
-  text-align: center;
 }
+
+.download{
+  height:5rem;
+  width:5rem;
+
+  margin: 1rem;
+  border-radius: 0.5rem;
+
+  background-color: transparent;
+}
+
 .carousel{
   display: flex;
   margin: 1rem;
