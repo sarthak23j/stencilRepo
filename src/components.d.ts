@@ -7,8 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ProductCarousel {
-        "data": any;
-        "products": any;
     }
     interface ProductItem {
         "desc": string;
@@ -48,8 +46,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ProductCarousel {
-        "data"?: any;
-        "products"?: any;
     }
     interface ProductItem {
         "desc"?: string;
