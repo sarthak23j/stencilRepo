@@ -68,13 +68,10 @@
 
 import { Component, h } from "@stencil/core";
 import Product from "./product";
-
-console.log(Product)
 @Component({
   tag: "product-carousel",
 })
 export class ProductCarousel {
-
   render() {
     return (
       <div class="carousel">
