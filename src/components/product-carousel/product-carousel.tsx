@@ -1,4 +1,4 @@
-import { Component, h, Host, Listen, Prop, State } from "@stencil/core";
+import { Component, h, Host, Listen, State } from "@stencil/core";
 import Product from "./product";
 @Component({
   tag: "product-carousel",
@@ -31,7 +31,7 @@ export class ProductCarousel {
   }
 
   @Listen('cartChange')
-  onCartChange(e) {
+  onCartChange(e: any) {
     let i = e.detail[1];
       this.updateCart(i);
     
