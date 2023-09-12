@@ -24,13 +24,16 @@ export class ProductCarousel {
     if(x){
       this.cart.push(i)
     }
-
-    console.log(this.cart)
   }
   
   dlcart(c: any){
-    console.log("Download clicked!")
-    console.log(c)
+    let finalCart: any[] = []
+
+    for (let n = 0 ; n<c.length ; n++){
+      finalCart.push(Product.filter((e) => e.i == c[n]))
+    }
+
+    console.log(finalCart);
     return;
   }
 
