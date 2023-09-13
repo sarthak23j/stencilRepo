@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CartButton {
+        "i": number;
+    }
     interface ProductCarousel {
     }
     interface ProductItem {
@@ -21,11 +24,17 @@ export namespace Components {
         "price": number;
     }
 }
-export interface ProductTextCustomEvent<T> extends CustomEvent<T> {
+export interface CartButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLProductTextElement;
+    target: HTMLCartButtonElement;
 }
 declare global {
+    interface HTMLCartButtonElement extends Components.CartButton, HTMLStencilElement {
+    }
+    var HTMLCartButtonElement: {
+        prototype: HTMLCartButtonElement;
+        new (): HTMLCartButtonElement;
+    };
     interface HTMLProductCarouselElement extends Components.ProductCarousel, HTMLStencilElement {
     }
     var HTMLProductCarouselElement: {
@@ -45,12 +54,17 @@ declare global {
         new (): HTMLProductTextElement;
     };
     interface HTMLElementTagNameMap {
+        "cart-button": HTMLCartButtonElement;
         "product-carousel": HTMLProductCarouselElement;
         "product-item": HTMLProductItemElement;
         "product-text": HTMLProductTextElement;
     }
 }
 declare namespace LocalJSX {
+    interface CartButton {
+        "i"?: number;
+        "onCartChange"?: (event: CartButtonCustomEvent<any[]>) => void;
+    }
     interface ProductCarousel {
     }
     interface ProductItem {
@@ -63,10 +77,10 @@ declare namespace LocalJSX {
     interface ProductText {
         "desc"?: string;
         "i"?: number;
-        "onCartChange"?: (event: ProductTextCustomEvent<any[]>) => void;
         "price"?: number;
     }
     interface IntrinsicElements {
+        "cart-button": CartButton;
         "product-carousel": ProductCarousel;
         "product-item": ProductItem;
         "product-text": ProductText;
@@ -76,6 +90,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cart-button": LocalJSX.CartButton & JSXBase.HTMLAttributes<HTMLCartButtonElement>;
             "product-carousel": LocalJSX.ProductCarousel & JSXBase.HTMLAttributes<HTMLProductCarouselElement>;
             "product-item": LocalJSX.ProductItem & JSXBase.HTMLAttributes<HTMLProductItemElement>;
             "product-text": LocalJSX.ProductText & JSXBase.HTMLAttributes<HTMLProductTextElement>;

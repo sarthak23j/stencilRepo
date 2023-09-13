@@ -1,4 +1,4 @@
-import { Component, h, Listen, Prop, State, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'product-text',
@@ -8,17 +8,7 @@ import { Component, h, Listen, Prop, State, Event, EventEmitter } from '@stencil
 export class FirstComponent {
   @Prop() i: number;
   @Prop() desc: string;
-  @State() added: boolean = false;
   @Prop() price: number;
-  @Event({bubbles:true}) cartChange: EventEmitter<any[]>;
-
-  @Listen('click')
-  handleClick(){
-    this.added = !this.added;
-    this.cartChange.emit([
-      this.added,
-      this.i])
-  }
   
   render() {
     return (
@@ -26,7 +16,7 @@ export class FirstComponent {
         <p class="product-desc">{this.desc} </p>
         <p class="product-price">
           Price : ${this.price}
-          <button class="buy-btn">{this.added ? "Remove from cart" : "Add to cart"}</button>
+          <cart-button i={this.i}></cart-button>
         </p>
       </div>
     );
