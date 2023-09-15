@@ -26,15 +26,24 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.1",
     "@stencil/core": "^4.0.0",
-    "pg": "^8.11.3"
+    "axios": "^1.5.0",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
+    "@types/pg": "^8.10.2",
+    "fetch": "^1.1.0",
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
-    "puppeteer": "^21.0.3"
+    "pg": "^8.11.3",
+    "puppeteer": "^21.0.3",
+    "rollup": "^3.29.1",
+    "rollup-plugin": "^1.0.0",
+    "rollup-plugin-node": "^0.2.1",
+    "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "license": "MIT"
 }

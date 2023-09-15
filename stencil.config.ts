@@ -3,6 +3,9 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'standalone',
   globalStyle: 'src/global/global.css',
+  plugins: [
+    'rollup-plugin-node-polyfills',
+  ],
   outputTargets: [
     {
       type: 'dist',

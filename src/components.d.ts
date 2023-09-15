@@ -10,6 +10,7 @@ export namespace Components {
         "i": number;
     }
     interface ProductCarousel {
+        "componentWillLoad": () => Promise<void>;
     }
     interface ProductItem {
         "desc": string;
