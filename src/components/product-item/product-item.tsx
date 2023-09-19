@@ -10,6 +10,7 @@ export class ProductItem {
   @Prop() src: string;
   @Prop() name: string;
   @Prop() desc: string;
+  @Prop() type: string;
   @Prop() price: number;
 
   render() {
@@ -18,7 +19,7 @@ export class ProductItem {
         <h2 class="item-name">{this.name}</h2>
         <div class="product-item">
           <img class="product-image" src={this.src} alt="product-image" />
-          <product-text i={this.i} desc={this.desc} price={this.price}></product-text>
+          <product-text i={this.i} desc={this.desc} price={this.price} type={this.type}></product-text>
         </div>
       </div>
     );

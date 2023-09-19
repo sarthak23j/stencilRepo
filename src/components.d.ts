@@ -8,9 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CartButton {
         "i": number;
+        "type": string;
     }
     interface ProductCarousel {
-        "componentWillLoad": () => Promise<void>;
     }
     interface ProductItem {
         "desc": string;
@@ -18,11 +18,13 @@ export namespace Components {
         "name": string;
         "price": number;
         "src": string;
+        "type": string;
     }
     interface ProductText {
         "desc": string;
         "i": number;
         "price": number;
+        "type": string;
     }
 }
 export interface CartButtonCustomEvent<T> extends CustomEvent<T> {
@@ -65,6 +67,7 @@ declare namespace LocalJSX {
     interface CartButton {
         "i"?: number;
         "onCartChange"?: (event: CartButtonCustomEvent<any[]>) => void;
+        "type"?: string;
     }
     interface ProductCarousel {
     }
@@ -74,11 +77,13 @@ declare namespace LocalJSX {
         "name"?: string;
         "price"?: number;
         "src"?: string;
+        "type"?: string;
     }
     interface ProductText {
         "desc"?: string;
         "i"?: number;
         "price"?: number;
+        "type"?: string;
     }
     interface IntrinsicElements {
         "cart-button": CartButton;

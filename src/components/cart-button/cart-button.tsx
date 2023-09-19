@@ -9,6 +9,7 @@ export class CartButton {
 
   @Prop() i: number;
   @State() added: boolean = false;
+  @Prop() type: string;
 
   @Event({bubbles:true}) cartChange: EventEmitter<any[]>;
 
@@ -17,7 +18,7 @@ export class CartButton {
     this.added = !this.added;
     this.cartChange.emit([
       this.added,
-      this.i])
+      this.type])
   }
 
   render() {

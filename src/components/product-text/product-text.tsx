@@ -9,6 +9,7 @@ export class FirstComponent {
   @Prop() i: number;
   @Prop() desc: string;
   @Prop() price: number;
+  @Prop() type: string;
   
   render() {
     return (
@@ -16,7 +17,7 @@ export class FirstComponent {
         <p class="product-desc">{this.desc} </p>
         <p class="product-price">
           Price : ${this.price}
-          <cart-button i={this.i}></cart-button>
+          <cart-button type={this.type}></cart-button>
         </p>
       </div>
     );
