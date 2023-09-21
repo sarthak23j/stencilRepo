@@ -11,6 +11,8 @@ export namespace Components {
         "type": string;
     }
     interface ProductCarousel {
+        "componentWillLoad": () => Promise<void>;
+        "getProducts": () => Promise<void>;
     }
     interface ProductItem {
         "desc": string;

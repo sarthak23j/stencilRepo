@@ -1,5 +1,4 @@
-import { Component, h, Host, Listen, State } from "@stencil/core";
-import Product from "./product";
+import { Component, h, Host, Listen, State, Method } from "@stencil/core";
 @Component({
   tag: "product-carousel",
   styleUrl: 'product-carousel.css',
@@ -9,24 +8,22 @@ export class ProductCarousel {
 
   @State() cart: string[] = [];
 
-  @State() products = Product;
+  @State() products: any;
 
   
-  // @Method()
-  // async getProducts() {
-  //   const response = await fetch('http://localhost:8080/import',{
-  //     mode:'no-cors',
-  //   });
-  //   const temp = await response.text();
-  //   console.log(await response.status)
-  //   this.products = temp;
-  //   console.log(this.products);
-  // }
+  @Method()
+  async getProducts() {    
+    const endPoint = 'http://localhost:8080/import/';
+    const request = await fetch(endPoint);
+    this.products = await request.json();
 
-  // @Method()
-  // async componentWillLoad(){
-  //   await this.getProducts()
-  // }
+    console.log('request reponse ---> ', this.products);
+  }
+
+  @Method()
+  async componentWillLoad(){
+    await this.getProducts()
+  }
   
   updateCart(type: any) { 
     if (this.cart.includes(type)) {
